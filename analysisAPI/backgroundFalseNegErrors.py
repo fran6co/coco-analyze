@@ -87,6 +87,9 @@ def backgroundFalseNegErrors( coco_analyze, imgs_info, saveDir ):
 
         if b['num_keypoints']==0: continue
 
+        if i % 1000 == 0:
+            print(f'processing false-negative {i} of {len(fn_gts)}')
+
         b_width  = int(b['bbox'][2])
         b_height = int(b['bbox'][3])
         ar_pic[0:b_height,0:b_width] += 1
